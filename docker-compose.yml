@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  webapps:
+    image: car2godeveloper/api-for-coding-challenge
+    ports:
+      - "3000:3000"
+
+  share_now-app-container:
+    image: share_now-app:1
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/share_now-app
+    ports:
+      - "8989:8989"
